@@ -1,6 +1,6 @@
 import './App.css';
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Components/header";
+import Footer from "./Components/footer";
 import {
   BrowserRouter,
   Switch,
