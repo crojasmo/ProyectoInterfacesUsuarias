@@ -5,6 +5,7 @@ import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
 import {Link, NavLink} from "react-router-dom";
+import {Col, FormControl, InputGroup, Row} from "react-bootstrap";
 
 class Header extends React.Component {
 
@@ -23,18 +24,41 @@ class Header extends React.Component {
 
     render() {
         return <>
-            <Navbar bg="light" expand="lg">
-                <Container fluid={"xl"}>
-                    <Link to={`/`} component={Navbar.Brand}>Truequería</Link>
+            <Navbar bg="" expand="lg" className={"barra"}>
+                <Container fluid={true}>
+                    <Link to={`/`} className={"text-white h1"} component={Navbar.Brand}>Truequería</Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Link to={`/`} component={Nav.Link}>Calculadora Prioridad</Link>
-                            <NavLink to={`/`} component={Nav.Link}>Generadora de mallas</NavLink>
-                            <Nav.Link href="#" className={'dropdown-toggle d-none d-lg-block'}>Carreras</Nav.Link>
-                            <Nav.Link href="#link">Actualizar Mallas</Nav.Link>
-                            <NavLink to={"/"} component={Nav.Link}>Contacto</NavLink>
-                        </Nav>
+
+                    <Navbar.Collapse id="basic-navbar-nav" className={"flex-column"}>
+                        <Row className={"ml-auto"}>
+                            <Col>
+                                <Nav className="">
+                                    <NavLink to={"/"} className={"text-white"} component={Nav.Link}>Nombre de usuario</NavLink>
+                                </Nav>
+                            </Col>
+                        </Row>
+                        <Row className={"w-100 align-items-center"}>
+                            <Col md={1}>
+                                <FormControl type="text" id="inlineFormInputGroupUsername2" placeholder="ordenar" />
+                            </Col>
+                            <Col className={"align-self-start align-items-center text-left"}>
+                                <NavLink to={"/"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
+                            </Col>
+                            <Col md={2}>
+                                <FormControl type="text" id="inlineFormInputGroupUsername2" placeholder="Categorías" />
+                            </Col>
+                            <Col md={2}>
+                                <InputGroup>
+                                    <FormControl type="search" id="inlineFormInputGroupUsername2" placeholder="Buscar" />
+                                    <InputGroup.Append>
+                                        <InputGroup.Text id="inputGroup-sizing-default">Icono de lupa aquí</InputGroup.Text>
+                                    </InputGroup.Append>
+
+                                </InputGroup>
+
+                            </Col>
+                        </Row>
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
