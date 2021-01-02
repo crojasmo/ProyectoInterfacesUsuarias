@@ -1,6 +1,7 @@
 import './App.css';
 import Header from "./Components/header";
 import Footer from "./Components/footer";
+import Trueque from "./Components/Trueque"
 import {
   BrowserRouter,
   Switch,
@@ -16,24 +17,14 @@ function App() {
     <div className="App">
 <BrowserRouter>
             <Switch>
-              <Route path="/:carr/prioridad">
+             
+              <Route path="/trueque">
                 <Header/>
-                 
-              </Route>
-              <Route path="/:carr/personal">
-                <Header/>
-              </Route>
-              <Route path="/:carr">
-                <Header/>
-              </Route>
-              <Route path="/prioridad/">
-                <Redirect to="/INF/prioridad"/>
-              </Route>
-              <Route path="/personal/">
-                <Redirect to="/INF/personal"/>
-              </Route>
+                <Trueque/>
+                </Route>
+              
               <Route path="/">
-                <Redirect to="/INF"/>
+              <Header/>
               </Route>
             </Switch>
           <Footer/>
