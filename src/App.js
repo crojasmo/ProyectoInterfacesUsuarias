@@ -9,6 +9,9 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import {Container} from "react-bootstrap";
+import Item from "./Components/item";
+import Home from "./Components/home";
 
 
 
@@ -28,12 +31,12 @@ function App() {
                 <Header/>
                 <Contacto/>
                 </Route>
-              
+
               <Route path="/">
-              <Header/>
+                <Header/>
+                <Home/>
               </Route>
             </Switch>
-          <Footer/>
         </BrowserRouter>
     </div>
   );
