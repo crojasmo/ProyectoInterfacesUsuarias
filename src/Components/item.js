@@ -12,7 +12,7 @@ class Item extends React.Component {
     render() {
         return (
             <Card>
-                <Card.Img className={"itemImage"} src={this.props.imageSrc || "https://via.placeholder.com/300"} alt="Imagen producto" />
+                <Card.Img className={"itemImage"} src={this.props.imageSrc || "https://via.placeholder.com/300"} alt="Imagen producto"/>
                 <Card.ImgOverlay className={"p-0"}>
                     <Card.Title className={"text-left p-2 itemTitle"}> {this.props.name || "Nombre"} </Card.Title>
                 </Card.ImgOverlay>
@@ -22,7 +22,7 @@ class Item extends React.Component {
                             ${this.props.price || 0}
                         </Col>
                         <Col className={"mx-0 my-0"}>
-                            <Button className={"m-0"}> Comprar </Button>
+                            <Button className={"m-0 itemButton"}> Comprar </Button>
                         </Col>
                     </Row>
                 </Card.Footer>

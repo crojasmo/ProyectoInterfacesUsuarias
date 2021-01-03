@@ -2,3 +2,8 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
+.itemButton {
+    border-radius: 40px !important;
+    box-shadow: 0px 0px 10px rgba(36, 163, 19, 0.81) !important;
+
+}
