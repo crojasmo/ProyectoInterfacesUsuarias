@@ -1,7 +1,8 @@
 import './App.css';
 import Header from "./Components/header";
 import Footer from "./Components/footer";
-import Trueque from "./Components/Trueque"
+import Trueque from "./Components/Trueque";
+import Contacto from "./Components/Contacto"
 import {
   BrowserRouter,
   Switch,
@@ -21,6 +22,11 @@ function App() {
               <Route path="/trueque">
                 <Header/>
                 <Trueque/>
+                </Route>
+
+                <Route path="/contacto">
+                <Header/>
+                <Contacto/>
                 </Route>
               
               <Route path="/">
