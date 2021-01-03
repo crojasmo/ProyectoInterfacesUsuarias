@@ -2,8 +2,9 @@ import React from 'react';
 import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
-import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table,Figure} from "react-bootstrap";
+import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table,Figure,Image} from "react-bootstrap";
 import imagen from "./img/auto.jpg"
+import user from "./img/user.png"
 import { X } from 'react-bootstrap-icons';
 import { ArrowLeftRight } from 'react-bootstrap-icons';
 
@@ -17,16 +18,14 @@ class Trueque extends React.Component {
 
     constructor(props) {
         super(props);
+        this.vendedor={"nombre":"Juan Carlos","listaPreferencias":["Telefono","Lavadora","Notebook"]}
         this.state = {
-            tusproductos:[{"nombre":"autito","precio":2200},{"nombre":"estufa","precio":21300}],
+            tusproductos:[{"nombre":"autito","precio":2200},{"nombre":"estufa","precio":21300},{"nombre":"telefono","precio":99000},{"nombre":"notebook"
+            ,"precio":500000},{"nombre":"auto","precio":1290000}],
             productosTrueque:[],
             ValorTrueque:-0
         }
-        /*this.CreateProducto("autito",2200)
-        this.CreateProducto("estufa",21300)
-        this.CreateProducto("telefono",99000)
-        this.CreateProducto("notebook",500000)
-        this.CreateProducto("auto",1290000)*/
+       
         
     }
     
@@ -116,6 +115,7 @@ class Trueque extends React.Component {
                
                 <br/>
                 <br/>
+                <Card>
                 {this.state.productosTrueque.map(producto =>
 
                 <Card>
@@ -143,8 +143,8 @@ class Trueque extends React.Component {
                 <br/>
                
                 <br/>
-                <Card body>$        {this.state.ValorTrueque}</Card>
-        
+                <Card body>Valor Total: $        {this.state.ValorTrueque}</Card>
+                </Card>
         </Col>
         <Col xs={2}>
             <br/>
@@ -168,10 +168,56 @@ class Trueque extends React.Component {
             <br/>
             <br/>
             <Button variant="success" size="lg"> Ofrecer Trueque</Button>  
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/><br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/><br/>
+            <br/>
+        
         </Col>
-        <Col xs={4}>
+        <Col xs={2} md={3}>
+            <h1 align="left">
+                Producto de Interes
+            </h1>
+            <br/>
+                <br/>
+        <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="https://via.placeholder.com/300x300" />
+        <Card.Body>
+        <Card.Title>Valor</Card.Title>
         
+        </Card.Body>
+        </Card>
         
+        </Col>
+    
+        <Col xs={3} lg={1} md={2} >
+                
+        <br/>
+            <br/>
+            <br/><br/>
+            <h2> Vendedor</h2>
+            <br/>
+            <Row className="justify-content-md-center">
+            <Image src={user} fluid/>
+            </Row>
+            <br/>
+            <Card body>
+                {this.vendedor.listaPreferencias.map(preferencia=>
+                    <Table striped bordered>
+                        {preferencia}
+                        
+                    </Table>
+                    
+                )}
+                <br/>
+            </Card>
         </Col>
         </Row>
         </Container>  
