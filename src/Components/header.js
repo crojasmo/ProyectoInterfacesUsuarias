@@ -32,7 +32,7 @@ class Header extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav" className={"flex-column"}>
                         <Row className={"ml-auto"}>
                             <Col>
-                                <Nav className="">
+                                <Nav>
                                     <NavLink to={"/"} className={"text-white"} component={Nav.Link}>Nombre de usuario</NavLink>
                                 </Nav>
                             </Col>
@@ -42,7 +42,9 @@ class Header extends React.Component {
                                 <FormControl type="text" id="inlineFormInputGroupUsername2" placeholder="ordenar" />
                             </Col>
                             <Col className={"align-self-start align-items-center text-left"}>
-                                <NavLink to={"/"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
+                                <Nav>
+                                    <NavLink to={"/"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
+                                </Nav>
                             </Col>
                             <Col md={2}>
                                 <FormControl type="text" id="inlineFormInputGroupUsername2" placeholder="Categorías" />
