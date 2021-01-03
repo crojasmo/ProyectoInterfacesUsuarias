@@ -18,6 +18,7 @@ class Trueque extends React.Component {
 
     constructor(props) {
         super(props);
+        this.producto={"nombre":"Notebook Acer","precio":1200000}
         this.vendedor={"nombre":"Juan Carlos","listaPreferencias":["Telefono","Lavadora","Notebook"]}
         this.state = {
             tusproductos:[{"nombre":"autito","precio":2200},{"nombre":"estufa","precio":21300},{"nombre":"telefono","precio":99000},{"nombre":"notebook"
@@ -117,27 +118,29 @@ class Trueque extends React.Component {
                 <br/>
                 <Card>
                 {this.state.productosTrueque.map(producto =>
-
-                <Card>
-                <Table>
+               
+                
+                <Table size="sm">
         
-                <th>
-                    <Card  style={{ width: '12rem',height: "12rem" }}>
-                    <Card.Img variant="top" src={imagen}/>
+                
+                    <th><Figure.Image
+                       width={50}
+                       height={50}
+                
+                       src={imagen}
+                     />
                     
-                      <Card.Title>{producto.nombre}</Card.Title>
-                      <Card.Text>
-                        $ {producto.precio}
-                        
-                      </Card.Text>
+                    &emsp;{producto.nombre} &emsp;${producto.precio}</th>
                      
-                     </Card>
-                     </th>
-                     <th>
+                     
+                   
+                     
+                    
+                     <th align="right">
                      <X classname="clickeable-x" color="red" onClick={this.Eliminar.bind(this,producto) } size={40}/>
                      </th>
                      </Table>
-                     </Card>
+                     
                 )}
                
                 <br/>
@@ -183,14 +186,14 @@ class Trueque extends React.Component {
         </Col>
         <Col xs={2} md={3}>
             <h1 align="left">
-                Producto de Interes
+                {this.producto.nombre}
             </h1>
             <br/>
                 <br/>
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src="https://via.placeholder.com/300x300" />
         <Card.Body>
-        <Card.Title>Valor</Card.Title>
+        <Card.Title>$ {this.producto.precio}</Card.Title>
         
         </Card.Body>
         </Card>
@@ -204,13 +207,16 @@ class Trueque extends React.Component {
             <br/><br/>
             <h2> Vendedor</h2>
             <br/>
+            
             <Row className="justify-content-md-center">
             <Image src={user} fluid/>
+            <h4> {this.vendedor.nombre}</h4>
             </Row>
             <br/>
-            <Card body>
+            <Card body style={{backgroundColor:"#95BDE0"}}>
+                <Card.Title>Lista de Deseos</Card.Title>
                 {this.vendedor.listaPreferencias.map(preferencia=>
-                    <Table striped bordered>
+                    <Table style={{backgroundColor:"white"}} striped bordered>
                         {preferencia}
                         
                     </Table>
