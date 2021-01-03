@@ -17,6 +17,10 @@ class Contacto extends React.Component {
         super(props);
         this.careers = {}
     }
+
+    sendMessagge(){
+      document.getElementById("demo").innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <p>Hello. How are you today?</p> <span class="time-right">11:00</span> </div>';
+    }
     
 
     render() {
@@ -29,7 +33,7 @@ class Contacto extends React.Component {
                 
                 <br/>
                 <br/>
-                <div class="scrollbar" style = {{ width: "800px", maxHeight: "400px" }}>
+                <div class="scrollbar" Id = "demo" style = {{ width: "800px", maxHeight: "400px" }}>
                 <div class="kontainer">
                 <img src="/w3images/bandmember.jpg" alt="Avatar"/>
                 <p>Hello. How are you today?</p>
@@ -72,7 +76,7 @@ class Contacto extends React.Component {
                 </InputGroup.Prepend>
                 <FormControl  placeholder="Maximo 100 caracteres" maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
                 <InputGroup.Append>
-                <Button variant="outline-primary">Send</Button>
+                <Button variant="outline-primary" onClick = {this.sendMessagge()}>Send</Button>
                 </InputGroup.Append>
                 
                 </InputGroup>
