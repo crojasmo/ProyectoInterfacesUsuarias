@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import { withRouter } from "react-router"
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table,Figure} from "react-bootstrap";
 import imagen from "./img/auto.jpg"
+import { X } from 'react-bootstrap-icons';
+import { ArrowLeftRight } from 'react-bootstrap-icons';
 
 class Trueque extends React.Component {
 
@@ -50,7 +52,19 @@ class Trueque extends React.Component {
 
     }
 
-    
+    Eliminar(producto){
+        var listaProducto=[...this.state.tusproductos]
+        var ofrecidos=[...this.state.productosTrueque]
+        var valor=this.state.ValorTrueque
+        const index = ofrecidos.indexOf(producto);
+        if (index > -1) {
+            ofrecidos.splice(index, 1);
+        }
+        listaProducto.push(producto)
+        valor=valor-producto.precio
+        this.setState({tusproductos:listaProducto,productosTrueque:ofrecidos,ValorTrueque:valor})
+
+    }
 
     
     
@@ -73,14 +87,14 @@ class Trueque extends React.Component {
                 <Card body>
                 <ButtonGroup vertical>
                 {this.state.tusproductos.map(producto =>
-                     <Button variant="outline-secondary" type="button" onClick={this.Ofrecer.bind(this,producto)}> <Figure>
+                     <Button variant="outline-secondary" type="button" onClick={this.Ofrecer.bind(this,producto)} > <Figure>
                      <Figure.Image
                        width={50}
                        height={50}
                 
                        src={imagen}
                      />
-                   </Figure> {producto.nombre} ---- {producto.precio}</Button>
+                   </Figure> {producto.nombre}  $ {producto.precio}</Button>
                     
 
                 )}
@@ -102,29 +116,63 @@ class Trueque extends React.Component {
                
                 <br/>
                 <br/>
-                <Card body>
-                <ButtonGroup vertical>
                 {this.state.productosTrueque.map(producto =>
-                     <Button variant="outline-danger" size="lg"> <Figure>
-                     <Figure.Image
-                       width={50}
-                       height={50}
-                
-                       src={imagen}
-                     />
-                   </Figure> {producto.nombre} ---- {producto.precio}</Button>
-                    
 
+                <Card>
+                <Table>
+        
+                <th>
+                    <Card  style={{ width: '12rem',height: "12rem" }}>
+                    <Card.Img variant="top" src={imagen}/>
+                    
+                      <Card.Title>{producto.nombre}</Card.Title>
+                      <Card.Text>
+                        $ {producto.precio}
+                        
+                      </Card.Text>
+                     
+                     </Card>
+                     </th>
+                     <th>
+                     <X classname="clickeable-x" color="red" onClick={this.Eliminar.bind(this,producto) } size={40}/>
+                     </th>
+                     </Table>
+                     </Card>
                 )}
-                </ButtonGroup>
-                </Card>
+               
                 <br/>
                
                 <br/>
-                <p>{this.state.ValorTrueque}</p>
+                <Card body>$        {this.state.ValorTrueque}</Card>
         
         </Col>
+        <Col xs={2}>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <ArrowLeftRight size={96}/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Button variant="success" size="lg"> Ofrecer Trueque</Button>  
+        </Col>
+        <Col xs={4}>
         
+        
+        </Col>
         </Row>
         </Container>  
         </>

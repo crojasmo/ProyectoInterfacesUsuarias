@@ -15,3 +15,7 @@ code {
 .barra {
   background: #8158C7;
 }
+
+.clickeable-x:hover {
+  color:"red"
+}
