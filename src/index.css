@@ -16,8 +16,6 @@ code {
   background: #8158C7;
 }
 
-.cont {
-  border: initial;
-  background: initial;
-  border-radius: initial;
+.clickeable-x:hover {
+  color:"red"
 }
