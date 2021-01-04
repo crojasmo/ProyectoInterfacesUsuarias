@@ -1,4 +1,34 @@
 .itemTitle {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(0,0,0,.33);
     -webkit-backdrop-filter: blur(5px);
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+}
+.itemButton {
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 10px rgba(36, 163, 19, 0.81) !important;
+    background-color: #6ED031 !important;
+    border-color: #6ED031 !important;
+    transition-duration: 0.2s;
+}
+.itemButton:hover {
+    box-shadow: 0px 0px 5px rgb(19, 140, 0) !important;
+    background-color: #4e9223 !important;
+    border-color: #4E9223 !important;
+}
+
+.itemImage {
+    border-radius: 14px 14px 0px 0px !important;
+
+}
+
+.itemFooter {
+    background-color: #7CB8DE !important;
+    border-bottom-left-radius: 14px !important;
+    border-bottom-right-radius: 14px !important;
+}
+
+.cardItem {
+    border-radius: 14px !important;
 }
