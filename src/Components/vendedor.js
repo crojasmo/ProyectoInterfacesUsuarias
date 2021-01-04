@@ -4,6 +4,8 @@ import PropTypes from "prop-types"
 import { withRouter } from "react-router"
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table,Figure,Image} from "react-bootstrap";
 import user from "./img/user.png"
+import nokia from "./img/nokia.jpg"
+import autoReal from "./img/autoreal.jpg"
 import Item from "./item";
 
 
@@ -34,6 +36,8 @@ class Vendedor extends React.Component {
 
         <Container fluid>
         <Row >
+        <br/>
+        <br/>
         <br/>
         <Col xs={1}>
             <h2>Vendedor</h2>
@@ -72,10 +76,10 @@ class Vendedor extends React.Component {
 vendedor:
             </h1>
             <br/>
-        <Item/>
+        <Item name="Celular Nokia" price={145000} imageSrc={nokia} />
         <br/>
             <br/>
-        <Item/>
+        <Item name="Auto" price={1990000}imageSrc={autoReal} />
         </Col>
 
         </Row>
