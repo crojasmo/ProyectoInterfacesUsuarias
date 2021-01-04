@@ -15,11 +15,21 @@ class Contacto extends React.Component {
 
     constructor(props) {
         super(props);
+        this.chat = React.createRef();
+        this.sendMessagge = this.sendMessagge.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.careers = {}
+        this.state = {value: ''};
     }
 
-    sendMessagge(){
-      document.getElementById("demo").innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <p>Hello. How are you today?</p> <span class="time-right">11:00</span> </div>';
+    handleChange(event) {   
+      this.setState({value: event.target.value});
+    }
+
+    sendMessagge(event){
+      this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <p>'+this.state.value+'</p> <span class="time-right">11:00</span> </div>';
+      //this.chat.current.innerHTML += this.state.value;
+      //this.chat.current.innerHTML += '</p> <span class="time-right">11:00</span> </div>';
     }
     
 
@@ -33,7 +43,7 @@ class Contacto extends React.Component {
                 
                 <br/>
                 <br/>
-                <div class="scrollbar" Id = "demo" style = {{ width: "800px", maxHeight: "400px" }}>
+                <div class="scrollbar" ref={this.chat}  style = {{ width: "800px", maxHeight: "400px" }}>
                 <div class="kontainer">
                 <img src="/w3images/bandmember.jpg" alt="Avatar"/>
                 <p>Hello. How are you today?</p>
@@ -74,9 +84,9 @@ class Contacto extends React.Component {
                 <InputGroup.Prepend>
                 <Button variant="success">Button</Button>
                 </InputGroup.Prepend>
-                <FormControl  placeholder="Maximo 100 caracteres" maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
+                <FormControl  placeholder="Maximo 100 caracteres" value={this.state.value} onChange={this.handleChange} maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
                 <InputGroup.Append>
-                <Button variant="outline-primary" onClick = {this.sendMessagge()}>Send</Button>
+                <Button variant="outline-primary" onClick = {this.sendMessagge}>Send</Button>
                 </InputGroup.Append>
                 
                 </InputGroup>
