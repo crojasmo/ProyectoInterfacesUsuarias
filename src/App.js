@@ -2,6 +2,7 @@ import './App.css';
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Trueque from "./Components/Trueque";
+import Vendedor from "./Components/vendedor"
 import Contacto from "./Components/Contacto"
 import {
   BrowserRouter,
@@ -25,6 +26,10 @@ function App() {
               <Route path="/trueque">
                 <Header/>
                 <Trueque/>
+                </Route>
+                <Route path="/vendedor">
+                <Header/>
+                <Vendedor/>
                 </Route>
 
                 <Route path="/contacto">
