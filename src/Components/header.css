@@ -1,0 +1,7 @@
+.barra {
+    background: #8158C7;
+    box-shadow: 0px 5px 10px rgba(0,0,0,.5);
+    position: sticky !important;
+    z-index: 3;
+    top: 0;
+}
