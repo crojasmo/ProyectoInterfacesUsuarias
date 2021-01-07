@@ -1,0 +1,15 @@
+.carousel {
+  width:270px;
+  height:150px;
+  margin: auto;
+}
+
+img.perfil {
+  height: 50%;
+  width: 50%;
+}
+
+.btn-lime{
+  background-color: '#bff997';
+  color: 'white';
+}

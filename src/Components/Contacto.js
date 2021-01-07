@@ -26,10 +26,12 @@ class Contacto extends React.Component {
       this.setState({value: event.target.value});
     }
 
-    sendMessagge(event){
-      this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <p>'+this.state.value+'</p> <span class="time-right">11:00</span> </div>';
-      //this.chat.current.innerHTML += this.state.value;
-      //this.chat.current.innerHTML += '</p> <span class="time-right">11:00</span> </div>';
+    sendMessagge(){
+      var currentdate = new Date(); 
+      var time = currentdate.getHours() + ":" + currentdate.getMinutes();
+      this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <p>'+this.state.value+'</p> <span class="time-right">'+time+'</span> </div>';
+      var elementHeight = this.chat.current.scrollHeight;
+      this.chat.current.scrollTop = elementHeight;
     }
     
 

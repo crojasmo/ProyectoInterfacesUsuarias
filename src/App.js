@@ -2,8 +2,9 @@ import './App.css';
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Trueque from "./Components/Trueque";
-import Vendedor from "./Components/vendedor"
-import Contacto from "./Components/Contacto"
+import Vendedor from "./Components/vendedor";
+import Contacto from "./Components/Contacto";
+import Compra from "./Components/Compra";
 import {
   BrowserRouter,
   Switch,
@@ -35,6 +36,11 @@ function App() {
                 <Route path="/contacto">
                 <Header/>
                 <Contacto/>
+                </Route>
+
+                <Route path="/compra">
+                <Header/>
+                <Compra/>
                 </Route>
 
               <Route path="/">
