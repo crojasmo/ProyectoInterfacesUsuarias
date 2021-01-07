@@ -15,6 +15,7 @@ import {
 import {Container} from "react-bootstrap";
 import Item from "./Components/item";
 import Home from "./Components/home";
+import Publicar from "./Components/publicar";
 
 
 
@@ -28,21 +29,27 @@ function App() {
               <Route path="/trueque">
                 <Header/>
                 <Trueque/>
-                </Route>
-                <Route path="/vendedor">
+              </Route>
+
+              <Route path="/vendedor">
                 <Header/>
                 <Vendedor/>
-                </Route>
+              </Route>
 
-                <Route path="/contacto">
+              <Route path="/contacto">
                 <Header/>
                 <Contacto/>
-                </Route>
+              </Route>
 
-                <Route path="/compra">
+              <Route path="/compra">
                 <Header/>
                 <Compra/>
-                </Route>
+              </Route>
+
+              <Route path="/publicar">
+                <Header/>
+                <Publicar/>
+              </Route>
 
               <Route path="/">
                 <Header/>
