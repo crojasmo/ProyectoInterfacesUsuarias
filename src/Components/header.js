@@ -7,6 +7,7 @@ import { withRouter } from "react-router"
 import {Link, NavLink} from "react-router-dom";
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Dropdown,DropdownButton} from "react-bootstrap";
 import {Search} from "react-bootstrap-icons"
+import './header.css'
 
 class Header extends React.Component {
 
