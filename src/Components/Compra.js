@@ -24,12 +24,17 @@ class Compra extends React.Component {
         return <>
         <br></br>
         <div class="col d-flex justify-content-center">
-        <Card style={{ width: '72rem' }}>
-            <Card.Header style={{ backgroundColor : '#DDB8EF'}} class="text-left" >&nbsp;&nbsp;&nbsp;&nbsp; Featured</Card.Header>
+        <Card className = {'round'} style={{ width: '72rem' }}>
+            <Card.Header  style={{ backgroundColor : '#DDB8EF'}} class="text-left topRound" >
+                <br></br>
+                &nbsp;&nbsp;&nbsp;&nbsp; Featured
+                <br></br>
+                <br></br>
+            </Card.Header>
             <Card.Body>
             <Row>
             <Col>
-            <Carousel>
+            <Carousel data-interval="false">
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
@@ -43,16 +48,20 @@ class Compra extends React.Component {
             </Carousel>
             <br></br>
             <br></br>
+            $precio
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <Button variant="success">Trueque</Button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button style = {{backgroundColor :"#bff997",borderColor : "#bff997"}}>Comprar</Button>
+            <Button style = {{backgroundColor :"#8dde56",borderColor : "#8dde56"}}>Comprar</Button>
+            <br></br>
+            <br></br>
+            <p align="left">Texto alineado a la izquierda de prueba no final el cual sera remplazada por la descripcion de un producto</p>
             </Col>
             <Col>
             <img class="card-img-top perfil" src={imagen} alt="Card image cap"/>
                 <Card.Title>Juan Rojas</Card.Title>
                 <Card.Text>
-                    <p class="card-text">Telefono: +569664020xx</p>
-                    <p class="card-text">Ubicacion:Region Metropolitana,Santiago</p>
+                    
                 </Card.Text>
                 <Button variant="primary">Contactar</Button>
             </Col>

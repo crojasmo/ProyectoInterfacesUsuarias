@@ -1,5 +1,6 @@
 import React from 'react';
 import './Contacto.css';
+import GoogleMapReact from 'google-map-react';
 import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
@@ -18,6 +19,8 @@ class Contacto extends React.Component {
         this.chat = React.createRef();
         this.sendMessagge = this.sendMessagge.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.getPosition= this.getPosition.bind(this);
+        this.checkNavigator= this.checkNavigator.bind(this);
         this.careers = {}
         this.state = {value: ''};
     }
@@ -30,6 +33,25 @@ class Contacto extends React.Component {
       var currentdate = new Date(); 
       var time = currentdate.getHours() + ":" + currentdate.getMinutes();
       this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <p>'+this.state.value+'</p> <span class="time-right">'+time+'</span> </div>';
+      var elementHeight = this.chat.current.scrollHeight;
+      this.chat.current.scrollTop = elementHeight;
+      this.setState({value: ''});
+    }
+
+    checkNavigator(){
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.getPosition);
+      }
+    }
+
+    getPosition(position){
+      var currentdate = new Date(); 
+      var time = currentdate.getHours() + ":" + currentdate.getMinutes();
+      var center = { lat: position.coords.latitude, lng: position.coords.longitude};
+      var zoom = 6;
+      this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <GoogleMapReact>'+position+'</p> <span class="time-right">'+time+'</span> </div>';
+      
+    
       var elementHeight = this.chat.current.scrollHeight;
       this.chat.current.scrollTop = elementHeight;
     }
@@ -84,7 +106,7 @@ class Contacto extends React.Component {
                 <br/>
                 <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                <Button variant="success">Button</Button>
+                <Button variant="success" onClick = {this.checkNavigator}>Button</Button>
                 </InputGroup.Prepend>
                 <FormControl  placeholder="Maximo 100 caracteres" value={this.state.value} onChange={this.handleChange} maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
                 <InputGroup.Append>
