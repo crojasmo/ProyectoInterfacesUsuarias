@@ -7,6 +7,7 @@ import user from "./img/user.png"
 import nokia from "./img/nokia.jpg"
 import autoReal from "./img/autoreal.jpg"
 import Item from "./item";
+import Comentario from "./comentario"
 
 
 class Vendedor extends React.Component {
@@ -39,7 +40,7 @@ class Vendedor extends React.Component {
         <br/>
         <br/>
         <br/>
-        <Col xs={1}>
+        <Col xs={2}>
             <h2>Vendedor</h2>
         <Image src={user} fluid/>
             <h4> {this.vendedor.nombre}</h4>
@@ -60,12 +61,14 @@ class Vendedor extends React.Component {
         </Card>
 
         </Col>
-        <Col xs={3}>
+        <Col xs={2}>
             <br/>
             <br/>
             <br/>
             <br/>
+        <div align="center">
         <Button href="/contacto" variant="primary" size="lg" block>Contactar</Button>
+        </div>
         </Col>
         <Col xs={2}>
         </Col>
@@ -75,16 +78,44 @@ class Vendedor extends React.Component {
             Mas productos de este
 vendedor:
             </h1>
-            <br/>
-        <Item name="Celular Nokia" price={145000} imageSrc={nokia} />
-        <br/>
-            <br/>
-        <Item name="Auto" price={1990000}imageSrc={autoReal} />
+           
+            
         </Col>
 
         </Row>
         <Row>
+        <Col xs={6}>
+            <Comentario comentario="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Aliquam a bibendum leo. Vestibulum porttitor elit vitae convallis laoreet. 
+             Proin sit amet libero id nisl interdum tincidunt ac ac nisi. Donec aliquet ultricies lorem,
+              eget auctor dolor cursus sed. Morbi eu posuere neque, et dapibus risus. Etiam consequat consectetur accumsan.
+               In euismod quis ipsum non aliquam. In eget rutrum urna. Ut sollicitudin porttitor metus,
+                vel placerat quam tincidunt ac. Nam vehicula diam nec magna iaculis, non vestibulum mauris interdum.
+                 Etiam sodales dapibus ullamcorper. Curabitur ullamcorper diam eu cursus ultrices.
+                  Aenean lobortis malesuada nulla, eu ultricies tellus. Aenean dictum hendrerit nibh posuere porttitor."
+                  name="Jose Luis" calificacion="4"/>
+        </Col>
         
+        <Col xs={3}>
+        
+        </Col>
+        <Col xs={2}>
+        <br/>
+        <Item name="Celular Nokia" price={145000} imageSrc={nokia} />
+        <br/>
+        </Col>
+
+        </Row>
+        <Row>
+            <Col xs={6}>
+            <Comentario/>
+            </Col>
+            <Col xs={3}>
+
+            </Col>
+            <Col xs={2}>
+            <Item name="Auto" price={1990000}imageSrc={autoReal} />
+            </Col>
         </Row>
 
         </Container>

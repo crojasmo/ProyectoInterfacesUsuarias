@@ -5,6 +5,7 @@ import Trueque from "./Components/Trueque";
 import Vendedor from "./Components/vendedor";
 import Contacto from "./Components/Contacto";
 import Compra from "./Components/Compra";
+import Comentario from "./Components/comentario";
 import {
   BrowserRouter,
   Switch,
