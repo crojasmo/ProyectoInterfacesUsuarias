@@ -50,7 +50,7 @@ class Header extends React.Component {
                             </Col>
                             <Col  className={"align-self-start align-items-center text-left"}>
                                 <Nav>
-                                    <NavLink to={"/"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
+                                    <NavLink to={"/publicar"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
                                 </Nav>
                             </Col>
                             <Col md={2}>
