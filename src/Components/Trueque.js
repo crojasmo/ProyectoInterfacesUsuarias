@@ -2,7 +2,7 @@ import React from 'react';
 import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
-import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table,Figure,Image} from "react-bootstrap";
+import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table,Figure,Image,Form} from "react-bootstrap";
 import imagen from "./img/auto.jpg"
 import user from "./img/user.png"
 import { X } from 'react-bootstrap-icons';
@@ -22,8 +22,11 @@ class Trueque extends React.Component {
         this.producto={"nombre":"Notebook Acer","precio":1200000}
         this.vendedor={"nombre":"Juan Carlos","listaPreferencias":["Telefono","Lavadora","Notebook"]}
         this.state = {
-            tusproductos:[{"nombre":"autito","precio":2200},{"nombre":"estufa","precio":21300},{"nombre":"telefono","precio":99000},{"nombre":"notebook"
-            ,"precio":500000},{"nombre":"auto","precio":1290000}],
+            tusproductos:[{"nombre":"autito","precio":2200,"src":"https://mercadopax.com/ar/wp-content/uploads/2019/12/auto-rojo.jpg"}
+            ,{"nombre":"estufa","precio":21300,"src":"https://www.heimat.cl/wp-content/uploads/2020/04/EstufaGasNegra01.jpg"},
+            {"nombre":"telefono","precio":99000,"src":"https://images.ctfassets.net/wcfotm6rrl7u/DJ4j4K1F7i8iqeMcckS24/82ce2300fb3a4064c6b5eb497d0cd4e9/nokia_5_1_Plus-front_back-Black-ROW1.png"}
+            ,{"nombre":"notebook","precio":500000,"src":"https://static.acer.com/up/Resource/Acer/Laptops/Aspire_1/images/20190430/Acer-Aspire-1-A115-31-main.png"}
+            ,{"nombre":"auto","precio":1290000,"src":"https://www.revistaturbo.com/sites/default/files/nissan_3.jpg"}],
             productosTrueque:[],
             ValorTrueque:-0,
             showModal: false
@@ -96,13 +99,14 @@ class Trueque extends React.Component {
                 
                 <Card body>
                 <ButtonGroup vertical>
+               
                 {this.state.tusproductos.map(producto =>
                      <Button variant="outline-secondary" type="button" onClick={this.Ofrecer.bind(this,producto)} > <Figure>
                      <Figure.Image
                        width={50}
                        height={50}
                 
-                       src={imagen}
+                       src={producto.src}
                      />
                    </Figure> {producto.nombre}  $ {producto.precio}</Button>
                     
@@ -137,7 +141,7 @@ class Trueque extends React.Component {
                        width={50}
                        height={50}
                 
-                       src={imagen}
+                       src={producto.src}
                      />
                     
                     &emsp;{producto.nombre} &emsp;${producto.precio}</th>
@@ -156,7 +160,16 @@ class Trueque extends React.Component {
                 <br/>
                
                 <br/>
-                <Card body>Valor Total: $        {this.state.ValorTrueque}</Card>
+                <Card body>Valor Acumulado: $        {this.state.ValorTrueque}</Card>
+                </Card>
+                <Card body>
+                <Form>
+                <Form.Group controlId="formBasicEmail">
+                <Form.Label >Efectivo</Form.Label>
+                <Form.Control type="email" placeholder="$" />
+                
+                </Form.Group>
+                </Form>
                 </Card>
         </Col>
         <Col xs={2}>
