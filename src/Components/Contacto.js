@@ -64,7 +64,7 @@ class Contacto extends React.Component {
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <Container >
             <Row>
-            <Col>
+            <Col className = {'col-6'}>
                 
                 <br/>
                 <br/>
@@ -121,7 +121,7 @@ class Contacto extends React.Component {
         
             </Col>
 
-            <Col>
+            <Col className = {'col-6'}>
             
             <h2>Vendedor</h2>
             
