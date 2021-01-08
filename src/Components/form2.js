@@ -1,7 +1,5 @@
 import React from "react";
 import {Button, Card, Col, Form, InputGroup, Row} from "react-bootstrap";
-import Form1 from "./form1";
-import bsCustomFileInput from 'bs-custom-file-input'
 
 
 class Form2 extends React.Component {
