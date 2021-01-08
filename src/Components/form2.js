@@ -1,18 +1,25 @@
 import React from "react";
 import {Button, Card, Col, Form, InputGroup, Row} from "react-bootstrap";
+import { withRouter } from "react-router"
 
 
 class Form2 extends React.Component {
+
+    // static propTypes = {
+    //     match: PropTypes.object.isRequired,
+    //     location: PropTypes.object.isRequired,
+    //     history: PropTypes.object.isRequired
+    // };
 
     constructor(props) {
         super(props);
         this.state = {
             price: this.props.price,
             visibility: this.props.vis,
-            validated: false,
-            images: [],
-            buy: false,
-            trueque: false
+            validated: this.props.validated,
+            images: this.props.images,
+            buy: this.props.buy,
+            trueque: this.props.trueque
         }
 
         this.handlePriceChange = this.handlePriceChange.bind(this)
@@ -33,7 +40,7 @@ class Form2 extends React.Component {
         let state = {...this.state}
         if (state.buy || state.trueque) {
             if  (state.images.length != 0) {
-                alert("se ha Publicado el producto")
+                this.props.publish(this.state.price, this.state.images, this.state.trueque, this.state.buy)
             }
         }
 
@@ -44,6 +51,10 @@ class Form2 extends React.Component {
     }
     handleVisChange(event) {
         this.setState({visibility: event.target.value})
+    }
+
+    updateProductData2() {
+
     }
 
     handleImages(event) {
@@ -69,7 +80,7 @@ class Form2 extends React.Component {
     }
 
     goBack() {
-        this.props.goBack(this.state.price, this.state.visibility)
+        this.props.goBack(this.state.price, this.state.images, this.state.trueque, this.state.buy)
     }
 
     showImages() {

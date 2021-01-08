@@ -19,8 +19,6 @@ class Header extends React.Component {
 
     constructor(props) {
         super(props);
-        this.careers = {}
-        this.state = {show: false, careers: this.careers}
     }
 
 

@@ -53,12 +53,12 @@ class Form1 extends React.Component {
         return <Form noValidate onSubmit={this.handleSubmit}>
             <Form.Group controlId="productName">
                 <Form.Label>Nombre Producto</Form.Label>
-                <Form.Control required={true} value={this.state.name} isValid={this.state.validated ? !this.state.nameInvalid : false} onChange={this.handleNameChange} isInvalid={this.state.nameInvalid} type="text" placeholder="Nombre Producto" />
+                <Form.Control required={true} value={this.state.name} isValid={this.state.validated ? !this.state.nameInvalid : false} onChange={this.handleNameChange} isInvalid={this.state.nameInvalid} type="text" placeholder="Obligatorio" />
             </Form.Group>
 
             <Form.Group controlId="description">
                 <Form.Label>Descripción</Form.Label>
-                <Form.Control required={true} value={this.state.description} isValid={this.state.validated ? !this.state.descInvalid : false} onChange={this.handleDescChange} isInvalid={this.state.descInvalid} as="textarea" placeholder="Describa su producto" />
+                <Form.Control required={true} value={this.state.description} isValid={this.state.validated ? !this.state.descInvalid : false} onChange={this.handleDescChange} isInvalid={this.state.descInvalid} as="textarea" placeholder="Obligatorio" />
             </Form.Group>
 
             <Form.Group controlId="productCategory">

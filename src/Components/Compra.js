@@ -5,6 +5,7 @@ import { withRouter, useHistory } from "react-router"
 import imagen from "./img/auto.jpg"
 import './Compra.css';
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Carousel,Table} from "react-bootstrap";
+import {Redirect} from "react-router-dom";
 
 class Compra extends React.Component {
 
@@ -16,12 +17,21 @@ class Compra extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            value: '',
+            redirectTrueque: false,
+        };
+        this.redirect = this.redirect.bind(this)
     }
 
      app = () => {
         const {history} = this.props;
         history.replace("/contacto");
+   }
+
+   redirect = () => {
+       const {history} = this.props;
+       history.push("/trueque");
    }
 
     render() {
@@ -55,7 +65,8 @@ class Compra extends React.Component {
             <br></br>
             ${this.props.precio || "n/a"}
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button variant="success">Trueque</Button>
+            <Button variant="success" onClick={this.redirect}>Trueque</Button>
+                {this.state.redirect && <Redirect to={"/trueque"}/>}
             &nbsp;&nbsp;&nbsp;&nbsp;
             <Button style = {{backgroundColor :"#8dde56",borderColor : "#8dde56"}}>Comprar</Button>
             <br></br>

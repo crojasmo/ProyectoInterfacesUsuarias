@@ -7,6 +7,7 @@ import imagen from "./img/auto.jpg"
 import user from "./img/user.png"
 import { X } from 'react-bootstrap-icons';
 import { ArrowLeftRight } from 'react-bootstrap-icons';
+import ModalTrueque from "./modalTrueque";
 
 class Trueque extends React.Component {
 
@@ -24,10 +25,13 @@ class Trueque extends React.Component {
             tusproductos:[{"nombre":"autito","precio":2200},{"nombre":"estufa","precio":21300},{"nombre":"telefono","precio":99000},{"nombre":"notebook"
             ,"precio":500000},{"nombre":"auto","precio":1290000}],
             productosTrueque:[],
-            ValorTrueque:-0
+            ValorTrueque:-0,
+            showModal: false
         }
        
-        
+        this.closeModal = this.closeModal.bind(this)
+        this.showModal = this.showModal.bind(this)
+
     }
     
     CreateProducto(nombre,precio){
@@ -67,12 +71,18 @@ class Trueque extends React.Component {
     }
 
     
-    
+    closeModal() {
+        this.setState({showModal: false})
+    }
+
+    showModal() {
+        this.setState({showModal: true})
+    }
 
     render() {
         
         return <>
-            
+            <ModalTrueque closeModal={this.closeModal} showModal={this.state.showModal}/>
             <Container fluid>
             <Row >
             <Col xs={2} classname="align-self-start">
@@ -170,7 +180,7 @@ class Trueque extends React.Component {
             <br/>
             <br/>
             <br/>
-            <Button variant="success" size="lg"> Ofrecer Trueque</Button>  
+            <Button variant="success" onClick={this.showModal} size="lg"> Ofrecer Trueque</Button>
 
             <br/>
             <br/>
