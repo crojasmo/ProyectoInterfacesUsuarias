@@ -45,7 +45,7 @@ class App extends React.Component{
     ]
     this.owners = [
       {name:"César Paulangelo", rating: "4.5", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94", phone: "+569 12345678", location:"RM"},
-      {name:"Carlos Rojas", rating: "4.3", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94", phone: "+569 12345678", location:"RM"},
+      {name:"Carlos Rojas", rating: "4.3", image: "https://static.wikia.nocookie.net/ssbb/images/4/46/Kirby_en_Kirby_Star_Allies.png/revision/latest?cb=20180527161543&path-prefix=es", phone: "+569 12345678", location:"RM"},
       {name:"Sebastián Gutierrez", rating: "4.7", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94", phone: "+569 12345678", location:"RM"},
       {name:"Felipe Sanchez", rating: "3.4", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94", phone: "+569 12345678", location:"Antofagasta"},
       {name:"Mateo Vajalar", rating: "4", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94", phone: "+569 12345678", location: "Copiapo"},
