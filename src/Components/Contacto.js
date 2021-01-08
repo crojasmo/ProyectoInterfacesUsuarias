@@ -49,7 +49,7 @@ class Contacto extends React.Component {
       var time = currentdate.getHours() + ":" + currentdate.getMinutes();
       var center = { lat: position.coords.latitude, lng: position.coords.longitude};
       var zoom = 6;
-      this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <GoogleMapReact>'+position+'</p> <span class="time-right">'+time+'</span> </div>';
+      this.chat.current.innerHTML += '<div class="kontainer darker"> <img src="/w3images/bandmember.jpg" alt="Avatar" class="right"/><p>Tu ubicacion fue enviada con exito</p> <span class="time-left">'+time+'</span> </div>';
       
     
       var elementHeight = this.chat.current.scrollHeight;
