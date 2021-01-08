@@ -42,7 +42,7 @@ class Compra extends React.Component {
         <Card className = {'round'} style={{ width: '72rem' }}>
             <Card.Header  style={{ backgroundColor : '#DDB8EF'}} class="text-left topRound" >
                 <br></br>
-                &nbsp;&nbsp;&nbsp;&nbsp; Featured
+                &nbsp;&nbsp;&nbsp;&nbsp; {this.props.productData.name}
                 <br></br>
                 <br></br>
             </Card.Header>
@@ -53,7 +53,7 @@ class Compra extends React.Component {
                 <Carousel.Item>
                     <img
                         className="d-block w-100 car"
-                        src={this.props.imageSrc1 || "https://via.placeholder.com/100"}
+                        src={this.props.productData.images[0]}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -71,15 +71,15 @@ class Compra extends React.Component {
             <Button style = {{backgroundColor :"#8dde56",borderColor : "#8dde56"}}>Comprar</Button>
             <br></br>
             <br></br>
-            <p align="left">Texto alineado a la izquierda de prueba no final el cual sera remplazada por la descripcion de un producto</p>
+            <p align="left">{this.props.productData.description}</p>
             </Col>
             <Col>
-            <img class="card-img-top perfil" src={this.props.userImage || "https://via.placeholder.com/150"} alt="Card image cap"/>
-                <Card.Title>{this.props.userName || "Juan Rojas"}</Card.Title>
+            <img class="card-img-top perfil" src={this.props.owner.image || "https://via.placeholder.com/150"} alt="Card image cap"/>
+                <Card.Title>{this.props.owner.name}</Card.Title>
                 <Row>
                     <Col class="sm-3">
                 <Card.Text>
-                    <p>Rating:{this.props.rating || "n/a"}</p>                  
+                    <p>Rating: {this.props.owner.rating || "0"}/5</p>
                 </Card.Text>
                 </Col>
                 <Col class="sm-9">

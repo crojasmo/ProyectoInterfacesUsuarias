@@ -196,14 +196,14 @@ class Trueque extends React.Component {
         </Col>
         <Col xs={2} md={3}>
             <h1 align="left">
-                {this.producto.nombre}
+                {this.props.product.name}
             </h1>
             <br/>
                 <br/>
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://via.placeholder.com/300x300" />
+        <Card.Img variant="top" src={this.props.product.images[0]} />
         <Card.Body>
-        <Card.Title>$ {this.producto.precio}</Card.Title>
+        <Card.Title>$ {this.props.product.price}</Card.Title>
         
         </Card.Body>
         </Card>
@@ -219,8 +219,8 @@ class Trueque extends React.Component {
             <br/>
             
             <Row className="justify-content-md-center">
-            <Image src={user} fluid/>
-            <h4> {this.vendedor.nombre}</h4>
+            <Image src={this.props.owner.image} fluid/>
+            <h4> {this.props.owner.name}</h4>
             </Row>
             <br/>
             <Card body style={{backgroundColor:"#95BDE0"}}>

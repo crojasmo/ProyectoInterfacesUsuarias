@@ -1,4 +1,5 @@
 import './App.css';
+import React from "react";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Trueque from "./Components/Trueque";
@@ -20,45 +21,70 @@ import Publicar from "./Components/publicar";
 
 
 
-function App() {
-  return (
-    <div className="App">
-<BrowserRouter>
-            <Switch>
-             
-              <Route path="/trueque">
-                <Header/>
-                <Trueque/>
-              </Route>
+class App extends React.Component{
 
-              <Route path="/vendedor">
-                <Header/>
-                <Vendedor/>
-              </Route>
+  constructor(props) {
+    super(props);
 
-              <Route path="/contacto">
-                <Header/>
-                <Contacto/>
-              </Route>
+    this.productData = [
+      { name: "PlayStation 5", price: "150.000",description: "Consola recien comprada practicamente sin uso, por favor coordinar entrega via mensaje", images: ["https://blog.es.playstation.com/tachyon/sites/14/2020/11/00-PlayStation-FAQ-featured-image-Cropped.jpg?resize=1088,612&crop_strategy=smart&zoom=1"], owner: 0},
+      { name: "Nintendo Switch", price: "423.000",description: "Consola recien comprada practicamente sin uso, por favor coordinar entrega via mensaje", images: ["https://cdn.pocket-lint.com/r/s/970x/assets/images/140007-games-review-nintendo-switch-review-image1-lp6zy9awm0.jpg?v1"], owner: 1},
+    ]
+    this.owners = [
+      {name:"César Paulangelo", rating: "5", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94", phone: "+569 12345678", location:"RM"},
+      {name:"Otra persona", rating: "4", image: "https://www.gravatar.com/avatar/ce49c4d6f05fae900bf273022a789e94"},
+    ]
+    let id = 0
+    this.state = {
+      product: this.productData[id],
+      owner: this.owners[this.productData[id].owner]
+    }
+    this.setProductAndOwner = this.setProductAndOwner.bind(this)
+  }
 
-              <Route path="/compra">
-                <Header/>
-                <Compra/>
-              </Route>
+  setProductAndOwner(product) {
+    console.log(product)
+    this.setState({product, owner:this.owners[product.owner]})
+  }
 
-              <Route path="/publicar">
-                <Header/>
-                <Publicar/>
-              </Route>
+  render() {
+    return <div className="App">
+      <BrowserRouter>
+        <Switch>
 
-              <Route path="/">
-                <Header/>
-                <Home/>
-              </Route>
-            </Switch>
-        </BrowserRouter>
+          <Route path="/trueque">
+            <Header/>
+            <Trueque productData={this.productData} product={this.state.product} owner={this.state.owner}/>
+          </Route>
+
+          <Route path="/vendedor">
+            <Header/>
+            <Vendedor owner={this.owners} productData={this.productData}/>
+          </Route>
+
+          <Route path="/contacto">
+            <Header/>
+            <Contacto owner={this.state.owner}/>
+          </Route>
+
+          <Route path="/compra">
+            <Header/>
+            <Compra owner={this.state.owner} productData={this.state.product}/>
+          </Route>
+
+          <Route path="/publicar">
+            <Header/>
+            <Publicar/>
+          </Route>
+
+          <Route path="/">
+            <Header/>
+            <Home setProduct={this.setProductAndOwner} productData={this.productData}/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
-  );
+  };
 }
 
 export default App;

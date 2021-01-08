@@ -5,6 +5,7 @@ import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 class Contacto extends React.Component {
 
@@ -55,7 +56,11 @@ class Contacto extends React.Component {
       var elementHeight = this.chat.current.scrollHeight;
       this.chat.current.scrollTop = elementHeight;
     }
-    
+
+    redirect = () => {
+        const {history} = this.props;
+        history.push("/vendedor");
+    }
 
     render() {
         
@@ -127,12 +132,12 @@ class Contacto extends React.Component {
             
             <div class="col d-flex justify-content-center">
             <div class="card" style={{width: '18rem'}}>
-                <img class="card-img-top" src={this.props.userImage || "https://via.placeholder.com/150"} alt="Card image cap"/>
+                <img class="card-img-top" src={this.props.owner.image || "https://via.placeholder.com/150"} alt="Card image cap"/>
                 <div class="card-body">
-                    <h5 class="card-title">{this.props.userName || "No Name"}</h5>
-                    <p class="card-text">Telefono: {this.props.userFono || "No Fono"}</p>
-                    <p class="card-text">Ubicacion:{this.props.userLocal || "No Ubicacion"}</p>
-                    <a href="#" class="btn btn-primary">Perfil</a>
+                    <h5 class="card-title">{this.props.owner.name || "No Name"}</h5>
+                    <p class="card-text">Telefono: {this.props.owner.phone || "No Fono"}</p>
+                    <p class="card-text">Ubicacion: {this.props.owner.location || "No Ubicacion"}</p>
+                    <Link to={"/vendedor"} class="btn btn-primary">Perfil</Link>
                 </div>
             </div>
             </div>

@@ -13,6 +13,7 @@ class Item extends React.Component {
     }
 
     redirect() {
+        this.props.setProduct()
         this.setState({redirect: true})
     }
 
@@ -20,7 +21,7 @@ class Item extends React.Component {
         return (
             <Card className={"cardItem"}>
                 {this.state.redirect && <Redirect to={'/compra'}/>}
-                <Card.Img className={"itemImage"} src={this.props.imageSrc || "https://via.placeholder.com/300"} alt="Imagen producto"/>
+                <Card.Img className={"itemImage"} src={this.props.imgSource} alt="Imagen producto"/>
                 <Card.ImgOverlay className={"p-0"}>
                     <Card.Title className={"text-left text-white p-2 itemTitle"}> {this.props.name || "Nombre"} </Card.Title>
                 </Card.ImgOverlay>
