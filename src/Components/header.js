@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/cjs/Nav";
 import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, Route} from "react-router-dom";
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Dropdown,DropdownButton} from "react-bootstrap";
 import {Search} from "react-bootstrap-icons"
 import './header.css'
@@ -38,28 +38,29 @@ class Header extends React.Component {
                             </Col>
                         </Row>
                         <Row className={"w-100 align-items-center"}>
-                            <Col md={1}>
-                            <DropdownButton  variant="light"as={ButtonGroup} title="Ordenar Por..." id="bg-vertical-dropdown-2">
-                            <Dropdown.Item eventKey="1">Fecha de Publicación</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Precio Ascendente</Dropdown.Item>
-                            <Dropdown.Item eventKey="3">Precio Descendente</Dropdown.Item>
-                            <Dropdown.Item eventKey="4">Usado Primero</Dropdown.Item>
-                            <Dropdown.Item eventKey="5">Nuevo Primero</Dropdown.Item>
-                            </DropdownButton>
-                            </Col>
+                            <Route exact path={"/"}>
+                                <Col md={2}>
+                                    <DropdownButton  variant="light"as={ButtonGroup} title="Ordenar Por..." id="bg-vertical-dropdown-2">
+                                    <Dropdown.Item eventKey="1">Fecha de Publicación</Dropdown.Item>
+                                    <Dropdown.Item eventKey="2">Precio Ascendente</Dropdown.Item>
+                                    <Dropdown.Item eventKey="3">Precio Descendente</Dropdown.Item>
+                                    <Dropdown.Item eventKey="4">Usado Primero</Dropdown.Item>
+                                    <Dropdown.Item eventKey="5">Nuevo Primero</Dropdown.Item>
+                                    </DropdownButton>
+                                </Col>
+
+                            </Route>
                             <Col  className={"align-self-start align-items-center text-left"}>
-                                <Nav>
                                     <NavLink to={"/publicar"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
-                                </Nav>
                             </Col>
                             <Col md={2}>
-                            <DropdownButton  variant="light"as={ButtonGroup} title="Categorias" id="bg-vertical-dropdown-1">
-                            <Dropdown.Item eventKey="1">Tecnologia</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Electro</Dropdown.Item>
-                            <Dropdown.Item eventKey="3">Automovil</Dropdown.Item>
-                            <Dropdown.Item eventKey="4">Vestimenta</Dropdown.Item>
-                            <Dropdown.Item eventKey="5">Jugueteria</Dropdown.Item>
-                            </DropdownButton>
+                                <DropdownButton  variant="light"as={ButtonGroup} title="Categorias" id="bg-vertical-dropdown-1">
+                                <Dropdown.Item eventKey="1">Tecnologia</Dropdown.Item>
+                                <Dropdown.Item eventKey="2">Electro</Dropdown.Item>
+                                <Dropdown.Item eventKey="3">Automovil</Dropdown.Item>
+                                <Dropdown.Item eventKey="4">Vestimenta</Dropdown.Item>
+                                <Dropdown.Item eventKey="5">Jugueteria</Dropdown.Item>
+                                </DropdownButton>
                             </Col>
                             <Col md={2}>
                                 <InputGroup>

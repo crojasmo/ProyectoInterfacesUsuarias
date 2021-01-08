@@ -23,7 +23,6 @@ class Home extends React.Component {
     render() {
         return <Container className={"cont mt-3"}>
             <Row className={"row-cols-3 row-cols-lg-4 row-cols-xl-5"}>
-                <ItemCol setProduct={this.props.setProduct} name={"Caracol"} price={"1.500"}/>
                 {this.generateProducts()}
             </Row>
         </Container>

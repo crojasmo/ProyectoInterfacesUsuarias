@@ -38,7 +38,7 @@ class Compra extends React.Component {
         
         return <>
         <br></br>
-        <div class="col d-flex justify-content-center">
+        <div class="col d-flex justify-content-center my-3">
         <Card className = {'round'} style={{ width: '72rem' }}>
             <Card.Header  style={{ backgroundColor : '#DDB8EF'}} class="text-left topRound" >
                 <br></br>
@@ -49,7 +49,7 @@ class Compra extends React.Component {
             <Card.Body>
             <Row>
             <Col>
-            <Carousel data-interval="false" >
+            <Carousel data-interval="false"  >
                 <Carousel.Item>
                     <img
                         className="d-block w-100 car"
@@ -63,7 +63,7 @@ class Compra extends React.Component {
             </Carousel>
             <br></br>
             <br></br>
-            ${this.props.precio || "n/a"}
+            ${this.props.productData.price || "n/a"}
             &nbsp;&nbsp;&nbsp;&nbsp;
             <Button variant="success" onClick={this.redirect}>Trueque</Button>
                 {this.state.redirect && <Redirect to={"/trueque"}/>}
@@ -73,7 +73,7 @@ class Compra extends React.Component {
             <br></br>
             <p align="left">{this.props.productData.description}</p>
             </Col>
-            <Col>
+            <Col className={"col-4"}>
             <img class="card-img-top perfil" src={this.props.owner.image || "https://via.placeholder.com/150"} alt="Card image cap"/>
                 <Card.Title>{this.props.owner.name}</Card.Title>
                 <Row>
