@@ -8,9 +8,10 @@ class ItemCol extends React.Component {
         super(props);
     }
 
+
     render () {
         return <Col className={"mb-3"}>
-            <Item name={this.props.name} imgSource={this.props.imgSource} price={this.props.price}/>
+            <Item setProduct={this.props.setProduct} name={this.props.name} imgSource={this.props.imgSource} price={this.props.price}/>
         </Col>
     }
 }

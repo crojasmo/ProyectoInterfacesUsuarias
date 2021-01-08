@@ -8,6 +8,7 @@ import nokia from "./img/nokia.jpg"
 import autoReal from "./img/autoreal.jpg"
 import Item from "./item";
 import Comentario from "./comentario"
+import {Link} from "react-router-dom";
 
 
 class Vendedor extends React.Component {
@@ -67,7 +68,7 @@ class Vendedor extends React.Component {
             <br/>
             <br/>
         <div align="center">
-        <Button href="/contacto" variant="primary" size="lg" block>Contactar</Button>
+        <Link to={"/contacto"} className={"btn btn-primary btn-lg"} variant="primary" size="lg" block>Contactar</Link>
         </div>
         </Col>
         <Col xs={2}>
