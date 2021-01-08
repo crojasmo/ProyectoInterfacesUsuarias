@@ -127,11 +127,11 @@ class Contacto extends React.Component {
             
             <div class="col d-flex justify-content-center">
             <div class="card" style={{width: '18rem'}}>
-                <img class="card-img-top" src="..." alt="Card image cap"/>
+                <img class="card-img-top" src={this.props.userImage || "https://via.placeholder.com/150"} alt="Card image cap"/>
                 <div class="card-body">
-                    <h5 class="card-title">Juan Rojas</h5>
-                    <p class="card-text">Telefono: +569664020xx</p>
-                    <p class="card-text">Ubicacion:Region Metropolitana,Santiago</p>
+                    <h5 class="card-title">{this.props.userName || "No Name"}</h5>
+                    <p class="card-text">Telefono: {this.props.userFono || "No Fono"}</p>
+                    <p class="card-text">Ubicacion:{this.props.userLocal || "No Ubicacion"}</p>
                     <a href="#" class="btn btn-primary">Perfil</a>
                 </div>
             </div>
