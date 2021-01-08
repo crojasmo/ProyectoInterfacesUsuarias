@@ -62,13 +62,13 @@ class Contacto extends React.Component {
         return <>
          
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-            <Container >
+            <Container className={"mt-3"} >
             <Row>
-            <Col className = {'col-6'}>
+            <Col className = {'col-8'}>
                 
                 <br/>
                 <br/>
-                <div class="scrollbar" ref={this.chat}  style = {{ width: "800px", maxHeight: "400px" }}>
+                <div class="scrollbar" ref={this.chat}  style = {{maxHeight: "400px" }}>
                 <div class="kontainer">
                 <img src="/w3images/bandmember.jpg" alt="Avatar"/>
                 <p>Hello. How are you today?</p>
@@ -121,7 +121,7 @@ class Contacto extends React.Component {
         
             </Col>
 
-            <Col className = {'col-6'}>
+            <Col className = {'col-4'}>
             
             <h2>Vendedor</h2>
             
