@@ -1,12 +1,17 @@
 .carousel {
-  width:270px;
-  height:150px;
+  width:180px;
+  height:100px;
   margin: auto;
 }
 
 img.perfil {
   height: 50%;
   width: 50%;
+}
+
+img.car{
+  width:180px;
+  height:100px;
 }
 
 .round{

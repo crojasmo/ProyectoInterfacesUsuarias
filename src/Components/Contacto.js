@@ -61,6 +61,7 @@ class Contacto extends React.Component {
         
         return <>
          
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <Container fluid={true}>
             <Row>
             <Col>
@@ -106,7 +107,7 @@ class Contacto extends React.Component {
                 <br/>
                 <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                <Button variant="success" onClick = {this.checkNavigator}>Button</Button>
+                <Button variant="success" onClick = {this.checkNavigator}><i class="fas fa-location"></i></Button>
                 </InputGroup.Prepend>
                 <FormControl  placeholder="Maximo 100 caracteres" value={this.state.value} onChange={this.handleChange} maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
                 <InputGroup.Append>
@@ -114,6 +115,7 @@ class Contacto extends React.Component {
                 </InputGroup.Append>
                 
                 </InputGroup>
+                <span class="dashicons dashicons-location"></span>
                 <br/>
                 
         
