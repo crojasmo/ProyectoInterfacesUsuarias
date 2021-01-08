@@ -6,6 +6,7 @@ import PropTypes from "prop-types"
 import { withRouter } from "react-router"
 import {Col, FormControl, InputGroup, Row,ButtonGroup,Button,Card,Table} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import {GeoAltFill} from "react-bootstrap-icons"
 
 class Contacto extends React.Component {
 
@@ -112,7 +113,7 @@ class Contacto extends React.Component {
                 <br/>
                 <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                <Button variant="success" onClick = {this.checkNavigator}><i class="fas fa-location"></i></Button>
+                <Button variant="success" onClick = {this.checkNavigator}><GeoAltFill/></Button>
                 </InputGroup.Prepend>
                 <FormControl  placeholder="Maximo 100 caracteres" value={this.state.value} onChange={this.handleChange} maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
                 <InputGroup.Append>
