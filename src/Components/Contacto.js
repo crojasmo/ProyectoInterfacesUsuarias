@@ -49,7 +49,7 @@ class Contacto extends React.Component {
       var time = currentdate.getHours() + ":" + currentdate.getMinutes();
       var center = { lat: position.coords.latitude, lng: position.coords.longitude};
       var zoom = 6;
-      this.chat.current.innerHTML += '<div class="kontainer"> <img src="/w3images/bandmember.jpg" alt="Avatar"/> <GoogleMapReact>'+position+'</p> <span class="time-right">'+time+'</span> </div>';
+      this.chat.current.innerHTML += '<div class="kontainer darker"> <img src="/w3images/bandmember.jpg" alt="Avatar" class="right"/><p>Tu ubicacion fue enviada con exito</p> <span class="time-left">'+time+'</span> </div>';
       
     
       var elementHeight = this.chat.current.scrollHeight;
@@ -61,6 +61,7 @@ class Contacto extends React.Component {
         
         return <>
          
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
             <Container fluid={true}>
             <Row>
             <Col>
@@ -106,7 +107,7 @@ class Contacto extends React.Component {
                 <br/>
                 <InputGroup className="mb-3">
                 <InputGroup.Prepend>
-                <Button variant="success" onClick = {this.checkNavigator}>Button</Button>
+                <Button variant="success" onClick = {this.checkNavigator}><i class="fas fa-location"></i></Button>
                 </InputGroup.Prepend>
                 <FormControl  placeholder="Maximo 100 caracteres" value={this.state.value} onChange={this.handleChange} maxLength ={100} aria-label="Recipient's username" aria-describedby="basic-addon1" />
                 <InputGroup.Append>
@@ -114,6 +115,7 @@ class Contacto extends React.Component {
                 </InputGroup.Append>
                 
                 </InputGroup>
+                <span class="dashicons dashicons-location"></span>
                 <br/>
                 
         
