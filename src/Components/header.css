@@ -5,3 +5,11 @@
     z-index: 3;
     top: 0;
 }
+.publicar{
+	background: #D553CD !important; 
+	border-color:#D553CD !important;
+}
+.publicar:hover{
+	background: #BF4CB8  !important; 
+	border-color:#BF4CB8  !important;
+}

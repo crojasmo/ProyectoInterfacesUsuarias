@@ -5,7 +5,7 @@ import Container from "react-bootstrap/cjs/Container";
 import PropTypes from "prop-types"
 import { withRouter } from "react-router"
 import {Link, NavLink, Route} from "react-router-dom";
-import {Col, FormControl, InputGroup, Row,ButtonGroup,Dropdown,DropdownButton} from "react-bootstrap";
+import {Col, FormControl, InputGroup, Row,ButtonGroup,Dropdown,DropdownButton,Button} from "react-bootstrap";
 import {Search} from "react-bootstrap-icons"
 import './header.css'
 
@@ -26,7 +26,7 @@ class Header extends React.Component {
         return <>
             <Navbar bg="" expand="lg" className={"barra"}>
                 <Container fluid={true}>
-                    <Link to={`/`} className={"text-white h1"} component={Navbar.Brand}><h1>Truequería</h1></Link>
+                    <Link to={`/`} className={"text-white h1"} component={Navbar.Brand} ><h1>Truequería</h1></Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                     <Navbar.Collapse id="basic-navbar-nav" className={"flex-column"}>
@@ -51,7 +51,8 @@ class Header extends React.Component {
 
                             </Route>
                             <Col  className={"align-self-start align-items-center text-left"}>
-                                    <NavLink to={"/publicar"}  className={"mb-0 align-items-center text-white"}>Publicar</NavLink>
+
+                                    <Button href={"/publicar"}  className={"mb-0 align-items-center text-white publicar"} style={{fontSize:20} }>Publicar</Button>
                             </Col>
                             <Col md={2}>
                                 <DropdownButton  variant="light"as={ButtonGroup} title="Categorias" id="bg-vertical-dropdown-1">
