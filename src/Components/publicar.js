@@ -1,19 +1,30 @@
 import React from "react";
 import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
+import Form1 from "./form1";
+import Form2 from "./form2";
 
 class Publicar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {validated: false}
-
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.state = {validated: false,
+            name: "",
+            description: "",
+            category: "0",
+            price: "",
+            visibility: "",
+            page: 1}
+        this.changePage = this.changePage.bind(this)
+        this.goBack = this.goBack.bind(this)
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
-        this.setState({validated: !this.state.validated})
+    goBack(price, visibility) {
+        this.setState({price, visibility, page:1})
     }
+    changePage(name, description, category) {
+        this.setState({name, description, category, page:2})
+    }
+
 
     render() {
         return <>
@@ -23,34 +34,10 @@ class Publicar extends React.Component {
                         <Card className={'mt-3'}>
                             <Card.Body>
                             <Card.Title className={'text-left'}>
-                                Nuevo Porducto
+                                Nuevo Producto
                             </Card.Title>
-                                <Form noValidate validated={this.state.validated} onSubmit={this.handleSubmit}>
-                                    <Form.Group controlId="productName">
-                                        <Form.Label>Nombre Producto</Form.Label>
-                                        <Form.Control required={true} type="text" placeholder="Nombre Producto" />
-                                    </Form.Group>
-
-                                    <Form.Group controlId="description">
-                                        <Form.Label>Descripción</Form.Label>
-                                        <Form.Control required={true} as="textarea" placeholder="Describa su producto" />
-                                    </Form.Group>
-
-                                    <Form.Group controlId="productCategory">
-                                        <Form.Label>Categoría</Form.Label>
-                                        <Form.Control required={true} as="select" className={'custom-select'} label="Categoría">
-                                            <option selected={true} disabled={true}>Seleccione una categoría</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                        </Form.Control>
-                                    </Form.Group>
-                                    <Button variant="primary" type="submit">
-                                        Siguiente
-                                    </Button>
-                                </Form>
+                                {(this.state.page == 1) && <Form1 name={this.state.name} description={this.state.description} category={this.state.category} updateStates={this.changePage}/>}
+                                {(this.state.page == 2) && <Form2 price={this.state.price} vis={this.state.visibility} goBack={this.goBack} />}
 
                             </Card.Body>
 
