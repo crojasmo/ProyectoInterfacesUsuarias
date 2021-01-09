@@ -37,14 +37,14 @@ class Compra extends React.Component {
     render() {
         
         return <>
-        <br></br>
+        <br/>
         <div class="col d-flex justify-content-center my-3">
         <Card className = {'round'} style={{ width: '72rem' }}>
-            <Card.Header  style={{ backgroundColor : '#DDB8EF'}} class="text-left topRound" >
-                <br></br>
-                &nbsp;&nbsp;&nbsp;&nbsp; {this.props.productData.name}
-                <br></br>
-                <br></br>
+            <Card.Header  style={{ backgroundColor : '#DDB8EF'}} className="topRound text-left" >
+        
+                
+                 <Card.Title className="mb-0 "  style={{fontSize:30}}>{this.props.productData.name}</Card.Title>
+                 
             </Card.Header>
             <Card.Body>
             <Row>
@@ -61,17 +61,15 @@ class Compra extends React.Component {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            <br></br>
-            <br></br>
-            ${this.props.productData.price || "n/a"}
+            <br/>
+        
+            <p classname="font-weight-bold mb-0 " style={{fontSize:30}}> ${this.props.productData.price || "n/a"}</p>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button variant="success" onClick={this.redirect}>Trueque</Button>
-                {this.state.redirect && <Redirect to={"/trueque"}/>}
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <Button style = {{backgroundColor :"#8dde56",borderColor : "#8dde56"}}>Comprar</Button>
-            <br></br>
-            <br></br>
+    
+            <br/>
+            <Card body className="bg-light">
             <p align="left">{this.props.productData.description}</p>
+            </Card>
             </Col>
             <Col className={"col-4"}>
             <img class="card-img-top perfil" src={this.props.owner.image || "https://via.placeholder.com/150"} alt="Card image cap"/>
@@ -83,9 +81,17 @@ class Compra extends React.Component {
                 </Card.Text>
                 </Col>
                 <Col class="sm-9">
-                <Button variant="primary" onClick = {this.app}>Contactar</Button>
+                
                 </Col>
                 </Row>
+                <Row className="justify-content-md-center">
+                <Button variant="primary" onClick = {this.app}>Contactar</Button>
+                </Row>
+                <br/>
+                <Button variant="success" size="lg" onClick={this.redirect}>Trueque</Button>
+                {this.state.redirect && <Redirect to={"/trueque"}/>}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <Button  size="lg" style = {{backgroundColor :"#8dde56",borderColor : "#8dde56"}}>Comprar</Button>
             </Col>
             </Row>
            
