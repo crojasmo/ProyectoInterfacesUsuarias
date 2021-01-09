@@ -61,12 +61,6 @@ class Compra extends React.Component {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            <br/>
-        
-            <p classname="font-weight-bold mb-0 " style={{fontSize:30}}> ${this.props.productData.price || "n/a"}</p>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-    
-            <br/>
             <Card body className="bg-light">
             <p align="left">{this.props.productData.description}</p>
             </Card>
@@ -92,6 +86,8 @@ class Compra extends React.Component {
                 {this.state.redirect && <Redirect to={"/trueque"}/>}
             &nbsp;&nbsp;&nbsp;&nbsp;
             <Button  size="lg" style = {{backgroundColor :"#8dde56",borderColor : "#8dde56"}}>Comprar</Button>
+                <p className="font-weight-bold mb-0 "
+                   style={{fontSize: 30}}> ${this.props.productData.price || "n/a"}</p>
             </Col>
             </Row>
            

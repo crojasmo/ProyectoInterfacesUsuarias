@@ -230,9 +230,9 @@ class Trueque extends React.Component {
             
             <Row className="justify-content-md-center">
             <Col>
-            <Image src={this.props.owner.image} />
+                <Image src={this.props.owner.image} width={150} height={"auto"}/>
+                <h4> {this.props.owner.name}</h4>
             </Col>
-            <h4> {this.props.owner.name}</h4>
             </Row>
             <br/>
             <Card body style={{backgroundColor:"#95BDE0"}}>
