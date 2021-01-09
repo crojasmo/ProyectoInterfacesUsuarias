@@ -86,18 +86,19 @@ class Trueque extends React.Component {
         
         return <>
             <ModalTrueque closeModal={this.closeModal} showModal={this.state.showModal}/>
-            <Container fluid>
+            <Container className='mt-3' fluid>
             <Row >
             <Col xs={2} classname="align-self-start">
-                <h1>
+                <h3>
                     Sus Productos
-                </h1>
+                </h3>
                 
                 
                 <br/>
                 <br/>
                 
                 <Card body>
+                    <Card.Body className='p-0'><p className='text-muted mb-0'>Selecciona los productos que quieras ofrecer como intercambio</p></Card.Body>
                 <ButtonGroup vertical>
                
                 {this.state.tusproductos.map(producto =>
@@ -123,9 +124,9 @@ class Trueque extends React.Component {
             </Col>
 
         <Col xs={3} classname="align-self-end">
-        <h1>
+        <h3>
                     Productos para trueque
-                </h1>
+                </h3>
                 
                
                 <br/>
@@ -183,10 +184,6 @@ class Trueque extends React.Component {
             <br/>
             <br/>
             <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
             <ArrowLeftRight size={96}/>
             <br/>
             <br/>
@@ -208,9 +205,9 @@ class Trueque extends React.Component {
         
         </Col>
         <Col xs={2} md={3}>
-            <h1 align="left">
+            <h3 align="left">
                 {this.props.product.name}
-            </h1>
+            </h3>
             <br/>
                 <br/>
         <Card style={{ width: '18rem' }}>
@@ -223,7 +220,7 @@ class Trueque extends React.Component {
         
         </Col>
     
-        <Col xs={3} lg={1} md={2} >
+        <Col xs={3} lg={2} md={3} >
                 
         <br/>
             <br/>
@@ -232,7 +229,9 @@ class Trueque extends React.Component {
             <br/>
             
             <Row className="justify-content-md-center">
-            <Image src={this.props.owner.image} fluid/>
+            <Col>
+            <Image src={this.props.owner.image} />
+            </Col>
             <h4> {this.props.owner.name}</h4>
             </Row>
             <br/>
